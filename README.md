@@ -6,4 +6,9 @@
 # Model
 - Penamaan untuk model contoh: Home.
 
-localhost/nisa/public/controller/method/param
+# View
+- Penamaan untuk view contoh: home
+
+# Router
+- Auto route
+- localhost/nisa/public/controller/method/param
