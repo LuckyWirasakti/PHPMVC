@@ -19,17 +19,17 @@
     <!--
 		CSS
 		============================================= -->
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/nouislider.min.css">
-    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
-    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="frontend/css/linearicons.css">
+    <link rel="stylesheet" href="frontend/css/font-awesome.min.css">
+    <link rel="stylesheet" href="frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="frontend/css/bootstrap.css">
+    <link rel="stylesheet" href="frontend/css/owl.carousel.css">
+    <link rel="stylesheet" href="frontend/css/nice-select.css">
+    <link rel="stylesheet" href="frontend/css/nouislider.min.css">
+    <link rel="stylesheet" href="frontend/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="frontend/css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="frontend/css/magnific-popup.css">
+    <link rel="stylesheet" href="frontend/css/main.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <nav class="navbar navbar-expand-lg navbar-light main_box">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="home"><img src="img/logo.png" alt=""></a>
+                    <a class="navbar-brand logo_h" href="home"><img src="frontend/img/logo.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                     aria-haspopup="true" aria-expanded="false">Shop</a>

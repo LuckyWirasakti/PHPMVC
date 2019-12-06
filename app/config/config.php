@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', '');
+define('BASEURL', 'http://localhost/app/public');
 
 // DB
 define('DB_HOST', 'localhost');

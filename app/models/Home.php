@@ -4,30 +4,22 @@ use app\core\Model;
 
 class Home extends Model
 {
-
-    public function getAllBanner()
+    public function banner()
     {
-        Model::query('SELECT * FROM banner');
-        return Model::resultSet();;
+        Model::query("SELECT * FROM banner");
+        return Model::resultSet();
     }
 
-    public function getAllFeatures()
+    public function brand()
     {
-        $this->query('SELECT * FROM features');
-        return $this->resultSet();
+        Model::query("SELECT * FROM brand");
+        return Model::resultSet();
     }
 
-    public function getAllCategory()
+    public function feature()
     {
-        $this->query('SELECT * FROM category');
-        return $this->resultSet();
+        Model::query('SELECT * FROM feature');
+        return Model::resultSet();
     }
-
-    public function getAllBrand()
-    {
-        $this->query('SELECT * FROM brand');
-        return $this->resultSet();
-    }
-
 }
 

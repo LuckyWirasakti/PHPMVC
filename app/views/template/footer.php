@@ -49,14 +49,14 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="img/i1.jpg" alt=""></li>
-                        <li><img src="img/i2.jpg" alt=""></li>
-                        <li><img src="img/i3.jpg" alt=""></li>
-                        <li><img src="img/i4.jpg" alt=""></li>
-                        <li><img src="img/i5.jpg" alt=""></li>
-                        <li><img src="img/i6.jpg" alt=""></li>
-                        <li><img src="img/i7.jpg" alt=""></li>
-                        <li><img src="img/i8.jpg" alt=""></li>
+                        <li><img src="frontend/img/i1.jpg" alt=""></li>
+                        <li><img src="frontend/img/i2.jpg" alt=""></li>
+                        <li><img src="frontend/img/i3.jpg" alt=""></li>
+                        <li><img src="frontend/img/i4.jpg" alt=""></li>
+                        <li><img src="frontend/img/i5.jpg" alt=""></li>
+                        <li><img src="frontend/img/i6.jpg" alt=""></li>
+                        <li><img src="frontend/img/i7.jpg" alt=""></li>
+                        <li><img src="frontend/img/i8.jpg" alt=""></li>
                     </ul>
                 </div>
             </div>
@@ -84,16 +84,16 @@
 </footer>
 <!-- End footer Area -->
 
-<script src="js/vendor/jquery-2.2.4.min.js"></script>
-<script src="js/vendor/popper.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+<script src="frontend/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="frontend/js/vendor/popper.js"></script>
+<script src="frontend/js/vendor/bootstrap.min.js"></script>
+<script src="frontend/js/jquery.ajaxchimp.min.js"></script>
+<script src="frontend/js/jquery.nice-select.min.js"></script>
+<script src="frontend/js/jquery.sticky.js"></script>
+<script src="frontend/js/nouislider.min.js"></script>
+<script src="frontend/js/jquery.magnific-popup.min.js"></script>
+<script src="frontend/js/owl.carousel.min.js"></script>
+<script src="frontend/js/main.js"></script>
 </body>
 
 </html>

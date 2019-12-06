@@ -18,7 +18,7 @@
 	                        </div>
 	                        <div class="col-lg-7">
 	                            <div class="banner-img">
-	                                <img class="img-fluid" src="img/banner/<?=$value['image']?>" alt="">
+	                                <img class="img-fluid" src="frontend/img/banner/<?=$value['image']?>" alt="">
 	                            </div>
 	                        </div>
 	                    </div>
@@ -39,7 +39,7 @@
 	            <div class="col-lg-3 col-md-6 col-sm-6">
 	                <div class="single-features">
 	                    <div class="f-icon">
-	                        <img src="img/features/<?=$value['icon']?>" alt="">
+	                        <img src="frontend/img/features/<?=$value['icon']?>" alt="">
 	                    </div>
 	                    <h6><?=$value['name']?></h6>
 	                    <p><?=$value['description']?></p>
@@ -71,7 +71,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p1.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p1.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -104,7 +104,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p2.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p2.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -137,7 +137,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p3.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p3.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -169,40 +169,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p4.jpg" alt="">
-	                        <div class="product-details">
-	                            <h6>addidas New Hammer sole
-	                                for Sports person</h6>
-	                            <div class="price">
-	                                <h6>$150.00</h6>
-	                                <h6 class="l-through">$210.00</h6>
-	                            </div>
-	                            <div class="prd-bottom">
-
-	                                <a href="" class="social-info">
-	                                    <span class="ti-bag"></span>
-	                                    <p class="hover-text">add to bag</p>
-	                                </a>
-	                                <a href="" class="social-info">
-	                                    <span class="lnr lnr-heart"></span>
-	                                    <p class="hover-text">Wishlist</p>
-	                                </a>
-	                                <a href="" class="social-info">
-	                                    <span class="lnr lnr-sync"></span>
-	                                    <p class="hover-text">compare</p>
-	                                </a>
-	                                <a href="" class="social-info">
-	                                    <span class="lnr lnr-move"></span>
-	                                    <p class="hover-text">view more</p>
-	                                </a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	                <!-- single product -->
-	                <div class="col-lg-3 col-md-6">
-	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p5.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p4.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -235,7 +202,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p6.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p5.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -268,7 +235,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p7.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p6.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -301,7 +268,40 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p8.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p7.jpg" alt="">
+	                        <div class="product-details">
+	                            <h6>addidas New Hammer sole
+	                                for Sports person</h6>
+	                            <div class="price">
+	                                <h6>$150.00</h6>
+	                                <h6 class="l-through">$210.00</h6>
+	                            </div>
+	                            <div class="prd-bottom">
+
+	                                <a href="" class="social-info">
+	                                    <span class="ti-bag"></span>
+	                                    <p class="hover-text">add to bag</p>
+	                                </a>
+	                                <a href="" class="social-info">
+	                                    <span class="lnr lnr-heart"></span>
+	                                    <p class="hover-text">Wishlist</p>
+	                                </a>
+	                                <a href="" class="social-info">
+	                                    <span class="lnr lnr-sync"></span>
+	                                    <p class="hover-text">compare</p>
+	                                </a>
+	                                <a href="" class="social-info">
+	                                    <span class="lnr lnr-move"></span>
+	                                    <p class="hover-text">view more</p>
+	                                </a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- single product -->
+	                <div class="col-lg-3 col-md-6">
+	                    <div class="single-product">
+	                        <img class="img-fluid" src="frontend/img/product/p8.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -352,7 +352,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p6.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p6.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -385,7 +385,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p8.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p8.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -418,7 +418,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p3.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p3.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -451,7 +451,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p5.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p5.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -484,7 +484,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p1.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p1.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -517,7 +517,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p4.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p4.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -550,7 +550,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p1.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p1.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -583,7 +583,7 @@
 	                <!-- single product -->
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
-	                        <img class="img-fluid" src="img/product/p8.jpg" alt="">
+	                        <img class="img-fluid" src="frontend/img/product/p8.jpg" alt="">
 	                        <div class="product-details">
 	                            <h6>addidas New Hammer sole
 	                                for Sports person</h6>
@@ -625,7 +625,7 @@
 	        <div class="row">
                 <?php foreach($data['brand'] as $value) :?>
 	            <a class="col single-img" href="<?=$value['url']?>">
-	                <img class="img-fluid d-block mx-auto" src="img/brand/<?=$value['image']?>" alt="<?=$value['name']?>">
+	                <img class="img-fluid d-block mx-auto" src="frontend/img/brand/<?=$value['image']?>" alt="<?=$value['name']?>">
                 </a>
                 <?php endforeach; ?>
 	        </div>
@@ -651,7 +651,7 @@
 	                <div class="row">
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r1.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r1.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -663,7 +663,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r2.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r2.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -675,7 +675,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r3.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r3.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -687,7 +687,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r5.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r5.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -699,7 +699,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r6.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r6.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -711,7 +711,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r7.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r7.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -723,7 +723,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r9.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r9.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -735,7 +735,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r10.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r10.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
@@ -747,7 +747,7 @@
 	                    </div>
 	                    <div class="col-lg-4 col-md-4 col-sm-6">
 	                        <div class="single-related-product d-flex">
-	                            <a href="#"><img src="img/r11.jpg" alt=""></a>
+	                            <a href="#"><img src="frontend/img/r11.jpg" alt=""></a>
 	                            <div class="desc">
 	                                <a href="#" class="title">Black lace Heels</a>
 	                                <div class="price">
