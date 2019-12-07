@@ -21,5 +21,21 @@ class Home extends Model
         Model::query('SELECT * FROM feature');
         return Model::resultSet();
     }
+
+    public function destroy_banner($id)
+    {
+        Model::query("DELETE FROM banner WHERE id = :id");
+        Model::bind('id', $id);
+        Model::execute();
+        return Model::rowCount();
+    }
+
+    public function destroy($id)
+    {
+        Model::query("DELETE FROM contact WHERE id = :id");
+        Model::bind('id', $id);
+        Model::execute();
+        return Model::rowCount();
+    }
 }
 
