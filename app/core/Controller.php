@@ -16,6 +16,6 @@ class Controller {
 
     protected function redirect($link)
     {
-        header("Location: ".BASEURL."/{$link}");
+        header("Location: ".BASE_URL."/{$link}");
     }
 }
