@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="admindashboard">Start Bootstrap</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -51,16 +51,23 @@
                 <span>Dashboard</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=BASE_URL?>/admincontact">
+                <i class="fas fa-file-signature"></i>
+                <span>Contact Me</span>
+            </a>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="fas fa-cogs"></i>
                 <span>Setting</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Management :</h6>
+                <h6 class="dropdown-header">Frontend Management :</h6>
                 <a class="dropdown-item" href="<?=BASE_URL?>/adminhome">Home</a>
                 <a class="dropdown-item" href="#">Profile</a>
-                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Backend Management :</h6>
+                <a class="dropdown-item" href="adminuser">User</a>
                 <h6 class="dropdown-header">Leave:</h6>
                 <a class="dropdown-item" href="<?=BASE_URL?>/adminauthentication/logout">Logout</a>
             </div>

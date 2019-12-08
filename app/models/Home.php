@@ -22,6 +22,12 @@ class Home extends Model
         return Model::resultSet();
     }
 
+    public function product()
+    {
+        Model::query('SELECT * FROM product LIMIT 8');
+        return Model::resultSet();
+    }
+
     public function store_banner($data)
     {
         if(move_uploaded_file($_FILES['image']['tmp_name'],getcwd().'/frontend/img/banner/'.$_FILES['image']['name'])){
@@ -32,7 +38,6 @@ class Home extends Model
             Model::bind('image', $_FILES['image']['name']);
             Model::bind('user_id', '1');
 
-            Model::execute();
             return Model::rowCount();
         }
         return 0;
@@ -48,7 +53,6 @@ class Home extends Model
             Model::bind('url', $data['url']);
             Model::bind('user_id', 1);
 
-            Model::execute();
             return Model::rowCount();
         }
         return 0;
@@ -64,7 +68,6 @@ class Home extends Model
             Model::bind('icon', $_FILES['image']['name']);
             Model::bind('user_id', 1);
 
-            Model::execute();
             return Model::rowCount();
         }
         return 0;

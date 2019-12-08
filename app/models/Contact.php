@@ -19,7 +19,6 @@ class Contact extends Model
         Model::bind('subject', $data['subject']);
         Model::bind('message', $data['message']);
 
-        Model::execute();
         return Model::rowCount();
     }
 
@@ -27,7 +26,6 @@ class Contact extends Model
     {
         Model::query("DELETE FROM contact WHERE id = :id");
         Model::bind('id', $id);
-        Model::execute();
         return Model::rowCount();
     }
 }
