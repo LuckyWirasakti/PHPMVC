@@ -2,27 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdf0b3bc-23f2-40bc-ae25-971695dccab9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/AdminUserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/admin_user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/img/banner/banner-img-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/img/banner/banner-img-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/img/banner/banner-img-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/img/brand/1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/admin_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin_home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/template2/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/template2/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/banner/banner-img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/category/s-p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/banner/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/brand/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/brand/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/brand/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/features/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/features/f-icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/img/features/f-icon4.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +81,7 @@
       <workItem from="1575730514640" duration="667000" />
       <workItem from="1575758380880" duration="3371000" />
       <workItem from="1575770258523" duration="12411000" />
-      <workItem from="1575794807637" duration="17304000" />
+      <workItem from="1575794807637" duration="17760000" />
     </task>
     <task id="LOCAL-00001" summary="save">
       <created>1575640533894</created>
@@ -123,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575804432557</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="save">
+      <created>1575813602536</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575813602536</updated>
+    </task>
+    <task id="LOCAL-00006" summary="save">
+      <created>1575813618336</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575813618336</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,10 +153,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1575692135945" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1575813600916">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1575813617070">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1575813600916" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1575813617070" />
     <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575640583016" />
     <state x="130" y="55" key="DiffContextDialog" timestamp="1575641859590">
       <screen x="0" y="0" width="1366" height="738" />
@@ -193,10 +195,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1575772334829" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1575811425426">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1575813844129">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1575811425426" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1575813844129" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1575784544848" />
   </component>
 </project>

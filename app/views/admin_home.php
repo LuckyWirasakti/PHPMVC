@@ -44,7 +44,6 @@
                         <td><?=$value['description']?></td>
                         <td><img src="frontend/img/banner/<?=$value['image']?>" width="200" alt=""></td>
                         <td>
-                            <a href="adminhome/update_banner/<?=$value['id']?>" class="btn btn-primary btn-sm">Update</a>
                             <a href="adminhome/delete_banner/<?=$value['id']?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
@@ -93,7 +92,6 @@
                         <td><?=$value['description']?></td>
                         <td><img src="frontend/img/features/<?=$value['icon']?>" alt=""></td>
                         <td>
-                            <a href="adminhome/update_feature/<?=$value['id']?>" class="btn btn-primary btn-sm">Update</a>
                             <a href="adminhome/delete_feature/<?=$value['id']?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
@@ -142,7 +140,6 @@
                         <td><?=$value['url']?></td>
                         <td><img src="frontend/img/brand/<?=$value['image']?>" alt=""></td>
                         <td>
-                            <a href="adminhome/update_brand/<?=$value['id']?>" class="btn btn-primary btn-sm">Update</a>
                             <a href="adminhome/delete_brand/<?=$value['id']?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
