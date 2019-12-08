@@ -1,6 +1,7 @@
 <?php 
 
 class Flasher {
+
     public static function setFlash($pesan, $aksi, $tipe)
     {
         $_SESSION['flash'] = [
@@ -21,5 +22,20 @@ class Flasher {
                 </div>';
             unset($_SESSION['flash']);
         }
+    }
+
+    public static function setLog($data)
+    {
+        $_SESSION['logged_in'] = $data;
+    }
+
+    public static function getLog()
+    {
+        return isset($_SESSION['logged_in'])?$_SESSION['logged_in']:NULL;
+    }
+
+    public static function unsetLog()
+    {
+        unset($_SESSION['logged_in']);
     }
 }

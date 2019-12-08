@@ -3,9 +3,8 @@
     <li class="breadcrumb-item">
         <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item active">Overview</li>
+    <li class="breadcrumb-item active">Dashboard</li>
 </ol>
-
 <!-- Icon Cards-->
 <div class="row">
     <div class="col-xl-3 col-sm-6 mb-3">
@@ -71,5 +70,10 @@
                 </span>
             </a>
         </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="text-center">Selamat Datang, <?=strtoupper($data['user']['username'])?>!</h3>
     </div>
 </div>

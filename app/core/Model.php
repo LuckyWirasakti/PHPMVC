@@ -69,6 +69,7 @@ class Model {
 
     protected function rowCount()
     {
+        $this->execute();
         return $this->stmt->rowCount();
     }
 

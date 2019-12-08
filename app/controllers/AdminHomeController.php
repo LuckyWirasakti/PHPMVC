@@ -3,6 +3,13 @@ use app\core\Controller;
 
 class AdminHomeController extends Controller {
 
+    public function __construct()
+    {
+        if(is_null(Flasher::getLog())){
+            $this->redirect('adminauthentication');
+        }
+    }
+
     public function index()
     {
         $data['title'] = 'Home Management';
