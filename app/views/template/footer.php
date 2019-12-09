@@ -84,16 +84,16 @@
 </footer>
 <!-- End footer Area -->
 
-<script src="frontend/js/vendor/jquery-2.2.4.min.js"></script>
-<script src="frontend/js/vendor/popper.js"></script>
-<script src="frontend/js/vendor/bootstrap.min.js"></script>
-<script src="frontend/js/jquery.ajaxchimp.min.js"></script>
-<script src="frontend/js/jquery.nice-select.min.js"></script>
-<script src="frontend/js/jquery.sticky.js"></script>
-<script src="frontend/js/nouislider.min.js"></script>
-<script src="frontend/js/jquery.magnific-popup.min.js"></script>
-<script src="frontend/js/owl.carousel.min.js"></script>
-<script src="frontend/js/main.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/vendor/popper.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/vendor/bootstrap.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/jquery.ajaxchimp.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/jquery.nice-select.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/jquery.sticky.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/nouislider.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/jquery.magnific-popup.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/owl.carousel.min.js"></script>
+<script src="<?=BASE_URL?>/frontend/js/main.js"></script>
 </body>
 
 </html>

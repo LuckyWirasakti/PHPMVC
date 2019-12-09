@@ -18,7 +18,7 @@
 	                        </div>
 	                        <div class="col-lg-7">
 	                            <div class="banner-img">
-	                                <img class="img-fluid" src="frontend/img/banner/<?=$value['image']?>" alt="">
+	                                <img class="img-fluid" src="<?=BASE_URL?>/frontend/img/banner/<?=$value['image']?>" alt="">
 	                            </div>
 	                        </div>
 	                    </div>
@@ -39,7 +39,7 @@
 	            <div class="col-lg-3 col-md-6 col-sm-6">
 	                <div class="single-features">
 	                    <div class="f-icon">
-	                        <img src="frontend/img/features/<?=$value['icon']?>" alt="">
+	                        <img src="<?=BASE_URL?>/frontend/img/features/<?=$value['icon']?>" alt="">
 	                    </div>
 	                    <h6><?=$value['name']?></h6>
 	                    <p><?=$value['description']?></p>
@@ -73,7 +73,7 @@
 	                <div class="col-lg-3 col-md-6">
 	                    <div class="single-product">
 
-	                        <img class="img-fluid" src="frontend/img/product/<?=$value['image']?>" alt="">
+	                        <img class="img-fluid" src="<?=BASE_URL?>/frontend/img/product/<?=$value['image']?>" alt="">
 	                        <div class="product-details">
 	                            <h6><?=$value['name']?></h6>
 	                            <div class="price">
@@ -106,7 +106,21 @@
                     <?php endforeach;?>
 	            </div>
                 <div class="row justify-content-center">
-                    <a href="#"><h3>-- View All --</h3></a>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-md justify-content-center">
+                            <li class="page-item <?=$data['active']==1 ? 'disabled':''?>">
+                                <a class="page-link text-black-50 " href="<?=BASE_URL?>/home/index/<?=$data['active']-1?>"><<</a>
+                            </li>
+                            <?php for($i = 1; $i <= $data['pagination']; $i++) :?>
+                            <li class="page-item">
+                                <a class="page-link text-black-50 <?=$data['active']==$i ? 'active':''?>" href="<?=BASE_URL?>/home/index/<?=$i?>"><?=$i?></a>
+                            </li>
+                            <?php endfor; ?>
+                            <li class="page-item <?=$data['active']==$data['pagination'] ? 'disabled':''?>">
+                                <a class="page-link text-black-50 " href="<?=BASE_URL?>/home/index/<?=$data['active']+1?>">>></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 	        </div>
 	    </div>
@@ -130,7 +144,7 @@
 	        <div class="row">
                 <?php foreach($data['brand'] as $value) :?>
 	            <a class="col single-img" href="<?=$value['url']?>">
-	                <img class="img-fluid d-block mx-auto" src="frontend/img/brand/<?=$value['image']?>" alt="<?=$value['name']?>">
+	                <img class="img-fluid d-block mx-auto" src="<?=BASE_URL?>/frontend/img/brand/<?=$value['image']?>" alt="<?=$value['name']?>">
                 </a>
                 <?php endforeach; ?>
 	        </div>

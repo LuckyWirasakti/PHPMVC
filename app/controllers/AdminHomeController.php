@@ -84,14 +84,16 @@ class AdminHomeController extends Controller {
     {
         $data['title'] = 'Edit Feature';
         $data['id'] = $id;
+        $data['feature'] = $this->model('Home')->feature_single($id);
+
         $this->view('template2/header', $data);
         $this->view('admin_feature_form', $data);
         $this->view('template2/footer');
     }
 
-    public function update_feature($id)
+    public function update_feature()
     {
-        $this->model('Home')->update_feature($_POST, $id);
+        $this->model('Home')->update_feature($_POST);
         $this->redirect('adminhome');
     }
 
