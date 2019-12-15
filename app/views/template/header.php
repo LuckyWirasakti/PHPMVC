@@ -84,6 +84,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="<?=BASE_URL;?>/contact">Contact</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?=BASE_URL?>/member">
+                                    <?=is_null(Flasher::getMemberLog())?'Login':'Dashboard'?>
+                                </a>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -97,8 +102,8 @@
         </div>
         <div class="search_input" id="search_input_box">
             <div class="container">
-                <form class="d-flex justify-content-between">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                <form class="d-flex justify-content-between" action="<?=BASE_URL?>/home/show" method="post">
+                    <input type="text" name="search" class="form-control" id="search_input" placeholder="Search Here">
                     <button type="submit" class="btn"></button>
                     <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
                 </form>

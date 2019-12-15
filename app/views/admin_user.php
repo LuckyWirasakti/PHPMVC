@@ -1,7 +1,7 @@
 <div class="card mb-3">
     <div class="card-header d-flex">
         <i class="fas fa-table mt-2"> <?=$data['title']?></i>
-        <button class="btn btn-primary btn-sm ml-auto">Tambah</button>
+        <a href="<?=BASE_URL?>/adminuser/create" class="btn btn-primary btn-sm ml-auto">Tambah</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -19,17 +19,18 @@
                     <th>No</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Action</th>
+                    <th width="200">Action</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                <?php foreach ($data['user'] as $value) :?>
+                <?php $id= 1; foreach ($data['user'] as $value) :?>
                     <tr>
-                        <td><?=$value['id']?></td>
+                        <td><?=$id++;?></td>
                         <td><?=$value['username']?></td>
                         <td><?=$value['email']?></td>
                         <td>
-                            <a href="mailto:<?=$value['email']?>" class="btn btn-primary btn-sm">Ubah</a>
+                            <a href="<?=BASE_URL?>/adminuser/edit/<?=$value['id']?>" class="btn btn-primary btn-sm">Ubah</a>
+                            <a href="<?=BASE_URL?>/adminuser/destroy/<?=$value['id']?>" class="btn btn-danger btn-sm">Ubah</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -29,13 +29,28 @@ class Flasher {
         $_SESSION['logged_in'] = $data;
     }
 
+    public static function setMemberLog($data)
+    {
+        $_SESSION['member'] = $data;
+    }
+
     public static function getLog()
     {
         return isset($_SESSION['logged_in'])?$_SESSION['logged_in']:NULL;
     }
 
+    public static function getMemberLog()
+    {
+        return isset($_SESSION['member'])?$_SESSION['member']:NULL;
+    }
+
     public static function unsetLog()
     {
         unset($_SESSION['logged_in']);
+    }
+
+    public static function unsetMemberLog()
+    {
+        unset($_SESSION['member']);
     }
 }

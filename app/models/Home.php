@@ -22,16 +22,16 @@ class Home extends Model
         return Model::resultSet();
     }
 
-    public function pagination()
+    public function pagination($where = NULL)
     {
-        Model::query("SELECT id FROM product");
+        Model::query(is_null($where) ? "SELECT id FROM product":"SELECT * FROM product WHERE name LIKE '%{$where}%'");
         return ceil((Model::rowCount()/8));
     }
     
-    public function product($page = 0)
+    public function product($where = NULL,$page = 0)
     {
         $start = ($page>1) ? ($page * 8) - 8 : 0;
-        Model::query("SELECT * FROM product LIMIT 8 OFFSET {$start}");
+        Model::query(is_null($where) ? "SELECT * FROM product LIMIT 8 OFFSET {$start}" : "SELECT * FROM product WHERE name LIKE '%{$where}%' LIMIT 8 OFFSET {$start}");
         return Model::resultSet();
     }
 
