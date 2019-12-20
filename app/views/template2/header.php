@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="<?=BASE_URL?>/admindashboard">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="<?=BASE_URL?>/admindashboard">Nisa Shoes</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -45,16 +45,22 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item <?=Flasher::getLink()=='dashboard'?'active':''?>">
             <a class="nav-link" href="<?=BASE_URL?>/admindashboard">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <?=Flasher::getLink()=='member'?'active':''?>">
+            <a class="nav-link" href="<?=BASE_URL?>/adminmember">
+                <i class="fas fa-file-signature"></i>
+                <span>Member</span>
+            </a>
+        </li>
+        <li class="nav-item <?=Flasher::getLink()=='contact'?'active':''?>">
             <a class="nav-link" href="<?=BASE_URL?>/admincontact">
                 <i class="fas fa-file-signature"></i>
-                <span>Contact Me</span>
+                <span>Contact</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -64,12 +70,12 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Frontend Management :</h6>
-                <a class="dropdown-item" href="<?=BASE_URL?>/adminhome">Home</a>
+                <a class="dropdown-item <?=Flasher::getLink()=='home'?'active':''?>" href="<?=BASE_URL?>/adminhome">Home</a>
                 <a class="dropdown-item" href="#">Profile</a>
                 <h6 class="dropdown-header">Backend Management :</h6>
-                <a class="dropdown-item" href="adminuser">User</a>
+                <a class="dropdown-item <?=Flasher::getLink()=='user'?'active':''?>" href="adminuser">User</a>
                 <h6 class="dropdown-header">Leave:</h6>
-                <a class="dropdown-item" href="<?=BASE_URL?>/adminauthentication/logout">Logout</a>
+                <a class="dropdown-item <?=Flasher::getLink()=='auth'?'active':''?>" href="<?=BASE_URL?>/adminauthentication/logout">Logout</a>
             </div>
         </li>
     </ul>

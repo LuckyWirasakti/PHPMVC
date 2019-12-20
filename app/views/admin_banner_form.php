@@ -21,11 +21,11 @@
                         <input type="hidden" id="id" name="id" placeholder="id" class="form-control" value="<?=isset($data['id'])? $data['id']:NULL;?>">
                         <div class="form-group">
                             <label for="Name" class="control-label">Name</label>
-                            <input type="text" id="Name" name="name" placeholder="Name" class="form-control" autofocus>
+                            <input type="text" id="Name" name="name" placeholder="Name" class="form-control" value="<?=isset($data['banner']['name'])?$data['banner']['name']:NULL;?>" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="Description" class="control-label">Description</label>
-                            <textarea type="text" name="description" id="Description" placeholder="Description" class="form-control" rows="10"></textarea>
+                            <textarea type="text" name="description" id="Description" placeholder="Description" class="form-control" rows="10"><?=isset($data['banner']['description'])?$data['banner']['description']:NULL;?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="Image" class="control-label">Image</label>

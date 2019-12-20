@@ -41,6 +41,18 @@ class Home extends Model
         return Model::single();
     }
 
+    public function banner_single($id)
+    {
+        Model::query("SELECT * FROM banner WHERE id = {$id}");
+        return Model::single();
+    }
+
+    public function brand_single($id)
+    {
+        Model::query("SELECT * FROM brand WHERE id = {$id}");
+        return Model::single();
+    }
+
     public function store_banner($data)
     {
         if(move_uploaded_file($_FILES['image']['tmp_name'],getcwd().'/frontend/img/banner/'.$_FILES['image']['name'])){
@@ -102,6 +114,48 @@ class Home extends Model
                 Model::bind('icon', $_FILES['image']['name']);
                 Model::bind('user_id', 1);
 
+                return Model::rowCount();
+            }
+        }
+        return 0;
+    }
+
+    public function update_banner($data)
+    {
+
+        Model::query("SELECT image FROM banner WHERE id = {$data['id']}");
+        $file = Model::single();
+        
+        if(unlink(getcwd().'/frontend/img/banner/'.$file['image']))
+        {
+            if(move_uploaded_file($_FILES['image']['tmp_name'],getcwd().'/frontend/img/banner/'.$_FILES['image']['name'])){
+                Model::query("UPDATE banner SET name=:name, description=:description, image=:image WHERE id =:id");
+
+                Model::bind('name', $data['name']);
+                Model::bind('description', $data['description']);
+                Model::bind('image', $_FILES['image']['name']);
+                Model::bind('id', $data['id']);
+                return Model::rowCount();
+            }
+        }
+        return 0;
+    }
+
+    public function update_brand($data)
+    {
+
+        Model::query("SELECT image FROM brand WHERE id = {$data['id']}");
+        $file = Model::single();
+
+        if(unlink(getcwd().'/frontend/img/brand/'.$file['image']))
+        {
+            if(move_uploaded_file($_FILES['image']['tmp_name'],getcwd().'/frontend/img/brand/'.$_FILES['image']['name'])){
+                Model::query("UPDATE brand SET name=:name, url=:url, image=:image WHERE id =:id");
+
+                Model::bind('name', $data['name']);
+                Model::bind('url', $data['url']);
+                Model::bind('image', $_FILES['image']['name']);
+                Model::bind('id', $data['id']);
                 return Model::rowCount();
             }
         }

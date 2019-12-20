@@ -9,7 +9,7 @@ class MemberController extends Controller {
             $this->redirect('member/login');
         }
         $data['title'] = "Dashboard Member";
-        $data['transaction'] = $this->model('Member')->all();
+        $data['transaction'] = $this->model('Member')->transaction();
 
         $this->view('template/header', $data);
         $this->view('member', $data);

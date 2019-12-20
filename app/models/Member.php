@@ -6,8 +6,15 @@ class Member extends Model
 {
     public function all()
     {
-        Model::query("SELECT * FROM transaction");
+        Model::query("SELECT * FROM member");
         return Model::resultSet();
+    }
+
+    public function member_single($id)
+    {
+        Model::query("SELECT * FROM member WHERE id=:id");
+        Model::bind('id', $id);
+        return Model::single();
     }
 
     public function attempt($data)
@@ -58,6 +65,35 @@ class Member extends Model
         }
 
         return 0;
+    }
+
+    public function update_admin($data)
+    {
+        Model::query("UPDATE member SET username=:username, email=:email, gender=:gender, food=:food, mom=:mom, password=:password WHERE id = :id");
+
+        Model::bind('username', $data['username']);
+        Model::bind('email', $data['email']);
+        Model::bind('gender', $data['gender']);
+        Model::bind('food', $data['food']);
+        Model::bind('mom', $data['mom']);
+        Model::bind('password', password_hash($data['password'], PASSWORD_DEFAULT));
+        Model::bind('id', $data['id']);
+
+        return Model::rowCount();
+    }
+
+    public function destroy($id)
+    {
+        Model::query("DELETE FROM member WHERE id = :id");
+        Model::bind('id', $id);
+
+        return Model::rowCount();
+    }
+
+    public function transaction()
+    {
+        Model::query("SELECT * FROM transaction");
+        return Model::resultSet();
     }
 }
 

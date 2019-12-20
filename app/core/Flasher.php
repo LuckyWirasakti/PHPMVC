@@ -53,4 +53,14 @@ class Flasher {
     {
         unset($_SESSION['member']);
     }
+
+    public static function setLink($data)
+    {
+        $_SESSION['active'] = $data;
+    }
+
+    public static function getLink()
+    {
+        return isset($_SESSION['active'])?$_SESSION['active']:NULL;
+    }
 }

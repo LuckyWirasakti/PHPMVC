@@ -8,6 +8,8 @@ class AdminHomeController extends Controller {
         if(is_null(Flasher::getLog())){
             $this->redirect('adminauthentication');
         }
+
+        Flasher::setLink('home');
     }
 
     public function index()
@@ -43,14 +45,15 @@ class AdminHomeController extends Controller {
     {
         $data['title'] = 'Edit Banner';
         $data['id'] = $id;
+        $data['banner'] = $this->model('Home')->banner_single($id);
         $this->view('template2/header', $data);
         $this->view('admin_banner_form', $data);
         $this->view('template2/footer');
     }
 
-    public function update_banner($id)
+    public function update_banner()
     {
-        $this->model('Home')->update_banner($_POST, $id);
+        $this->model('Home')->update_banner($_POST);
         $this->redirect('adminhome');
     }
 
@@ -127,14 +130,16 @@ class AdminHomeController extends Controller {
     {
         $data['title'] = 'Edit Brand';
         $data['id'] = $id;
+        $data['brand'] = $this->model('Home')->brand_single($id);
+
         $this->view('template2/header', $data);
         $this->view('admin_brand_form', $data);
         $this->view('template2/footer');
     }
 
-    public function update_brand($id)
+    public function update_brand()
     {
-        $this->model('Home')->update_brand($_POST, $id);
+        $this->model('Home')->update_brand($_POST);
         $this->redirect('adminhome');
     }
 

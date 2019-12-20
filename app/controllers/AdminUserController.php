@@ -8,12 +8,15 @@ class AdminUserController extends Controller {
         if(is_null(Flasher::getLog())){
             $this->redirect('adminauthentication');
         }
+
+        Flasher::setLink('user');
     }
 
     public function index()
     {
         $data['title'] = "User Management";
         $data['user'] = $this->model('User')->all();
+
         $this->view('template2/header', $data);
         $this->view('admin_user', $data);
         $this->view('template2/footer');

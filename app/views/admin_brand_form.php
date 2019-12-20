@@ -21,11 +21,11 @@
                         <input type="hidden" id="id" name="id" placeholder="Name" class="form-control" value="<?=isset($data['id'])? $data['id']:NULL;?>">
                         <div class="form-group">
                             <label for="Name" class="control-label">Name</label>
-                            <input type="text" id="Name" name="name" placeholder="Name" class="form-control" autofocus>
+                            <input type="text" id="Name" name="name" placeholder="Name" class="form-control" value="<?=isset($data['brand']['name'])?$data['brand']['name']:NULL;?>" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="Url" class="control-label">Url</label>
-                            <input type="text" id="Url" name="url" placeholder="https://www.example.com" class="form-control"></input>
+                            <input type="text" id="Url" name="url" placeholder="https://www.example.com" class="form-control" value="<?=isset($data['brand']['url'])?$data['brand']['url']:NULL;?>"/>
                         </div>
                         <div class="form-group">
                             <label for="Image" class="control-label">Image</label>
