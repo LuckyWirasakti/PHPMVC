@@ -57,11 +57,23 @@
                 <span>Member</span>
             </a>
         </li>
+        <li class="nav-item <?=Flasher::getLink()=='product'?'active':''?>">
+            <a class="nav-link" href="<?=BASE_URL?>/adminproduct">
+                <i class="fas fa-file-signature"></i>
+                <span>Product</span>
+            </a>
+        </li>
+        <li class="nav-item <?=Flasher::getLink()=='comment'?'active':''?>">
+            <a class="nav-link" href="<?=BASE_URL?>/admincomment">
+                <i class="fas fa-file-signature"></i>
+                <span>Comment</span>
+            </a>
+        </li>
         <li class="nav-item <?=Flasher::getLink()=='contact'?'active':''?>">
             <a class="nav-link" href="<?=BASE_URL?>/admincontact">
                 <i class="fas fa-file-signature"></i>
                 <span>Contact</span>
-            </a>
+            </a> 
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -28,7 +28,30 @@ class Model {
     {
         $this->stmt = $this->dbh->prepare($query);
     }
-
+    protected function getKode($n,$data) { 
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.$data; 
+        $randomString = ''; 
+      
+        for ($i = 0; $i < $n; $i++) { 
+            $index = rand(0, strlen($characters) - 1); 
+            $randomString .= $characters[$index]; 
+        } 
+        return $randomString; 
+    } 
+    protected function random_str(
+        int $length = 32,
+        string $keyspace = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    ): string {
+        if ($length < 1) {
+            throw new \RangeException("Length must be a positive integer");
+        }
+        $pieces = [];
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $pieces []= $keyspace[random_int(0, $max)];
+        }
+        return implode('', $pieces);
+    }
     protected function bind($param, $value, $type = null)
     {
         if( is_null($type) ) {
