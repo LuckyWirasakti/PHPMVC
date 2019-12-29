@@ -83,6 +83,7 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Frontend Management :</h6>
                 <a class="dropdown-item <?=Flasher::getLink()=='home'?'active':''?>" href="<?=BASE_URL?>/adminhome">Home</a>
+                <a class="dropdown-item <?=Flasher::getLink()=='home'?'active':''?>" href="<?=BASE_URL?>/admincompany">Company Profile</a>
                 <a class="dropdown-item" href="#">Profile</a>
                 <h6 class="dropdown-header">Backend Management :</h6>
                 <a class="dropdown-item <?=Flasher::getLink()=='user'?'active':''?>" href="adminuser">User</a>

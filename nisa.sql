@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2019 at 03:03 PM
+-- Generation Time: Dec 29, 2019 at 05:49 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.1.33
 
@@ -107,6 +107,26 @@ CREATE TABLE `comment` (
 
 INSERT INTO `comment` (`id`, `name`, `email`, `id_product`, `comment`, `reply_comment`, `reply_by`) VALUES
 (1, 'Albert', 'albert@gmail.com', 1, 'Product is ready ?', 'Yeah, this product is still ready ', 'Admin RonRon');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE `company` (
+  `id` int(11) NOT NULL,
+  `title` varchar(30) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `title`, `description`, `image`) VALUES
+(1, 'Nisha Shoes', 'Nisha Shoes adalah sebuah toko yang menjual berbagai macam sepatu. Tujuan dari pembuatan sistem berbasis website Nisha Shoes diharapkan dapat bersaing dengan toko lain, meningkatkan efektifitas kerja, efisien sumberdaya, dan peningkatan kualitas informasi.  ', 'logo-1577594774.png');
 
 -- --------------------------------------------------------
 
@@ -349,6 +369,12 @@ ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `company`
+--
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -425,6 +451,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `company`
+--
+ALTER TABLE `company`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contact`

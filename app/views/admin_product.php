@@ -32,7 +32,8 @@
                 <?php $id= 1; foreach ($data['product'] as $value) :?>
                     <tr>
                         <td><?=$id++;?></td>
-                        <td><?=$value['image']?></td>
+                        
+                    <td><img src="<?=BASE_URL?>/frontend/img/product/<?=$value['image']?>" width="200px"></td>
                         <td><?=$value['name']?></td>
                         <td><?='$'.$value['price']?></td>
                         <td><?=$value['description']?></td>
