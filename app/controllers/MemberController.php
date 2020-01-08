@@ -10,7 +10,11 @@ class MemberController extends Controller {
         }
         $data['title'] = "Dashboard Member";
         $data['transaction'] = $this->model('Member')->transaction();
-
+        if(Flasher::getMemberLog()['id']){
+            $data['countcart'] = $this->model('Cart')->countMyCart(Flasher::getMemberLog()['id']);
+            // var_dump($data['countcart']);
+            // die();
+        }
         $this->view('template/header', $data);
         $this->view('member', $data);
         $this->view('template/footer');

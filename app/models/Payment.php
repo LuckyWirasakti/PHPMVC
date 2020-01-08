@@ -28,7 +28,7 @@ class Payment extends Model
         Model::bind('kode_payment', Model::getKode(10,$kode));
         Model::bind('payment_method', $data['payment_method']);
         Model::bind('id', $data['id']);
-        Model::execute();
+        // Model::execute();
         return Model::rowCount();
     }
     

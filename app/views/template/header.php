@@ -91,7 +91,20 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="<?=BASE_URL?>/cart" class="cart"><span class="ti-bag">(0)</span></a></li>
+                        <li class="nav-item"><a href="<?=BASE_URL?>/cart" class="cart"><span class="ti-bag">
+                        <?php 
+                        if(Flasher::getMemberLog()['id']){
+                            if(!empty($data['countcart'])){
+                                foreach($data['countcart'] as $item){
+                                    echo '('.$item['count'].')';
+                                }
+                            }else{
+                                echo '(0)';
+                            }
+                        }else{
+                            echo '(0)';
+                         } ?>
+                        </span></a></li>
                             <li class="nav-item">
                                 <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                             </li>

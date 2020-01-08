@@ -1,24 +1,22 @@
 <?php
 use app\core\Controller;
 
-class ContactController extends Controller {
+class FaqController extends Controller {
 
     public function index()
     {
-        $data['title'] = 'Contact';
+        $data['title'] = 'FAQ';
+        $data['faq'] = $this->model('Faq')->getAllFaq();
         if(Flasher::getMemberLog()['id']){
             $data['countcart'] = $this->model('Cart')->countMyCart(Flasher::getMemberLog()['id']);
             // var_dump($data['countcart']);
             // die();
         }
-        $this->view('template/header', $data);
-        $this->view('contact');
-        $this->view('template/footer');
-    }
+        // var_dump($data);
+        // die();
 
-    public function store()
-    {
-        $this->model('Contact')->store($_POST);
-        $this->redirect('contact');
+        $this->view('template/header', $data);
+        $this->view('faq', $data);
+        $this->view('template/footer');
     }
 }

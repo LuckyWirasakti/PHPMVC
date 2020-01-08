@@ -10,6 +10,11 @@ class CheckoutController extends Controller {
         $data['totalmyCart'] = $this->model('Cart')->totalMyCart();
         $data['countcart'] = $this->model('Cart')->countMyCart();
         $data['myCheckout'] = $this->model('Checkout')->getmyCheckout();
+        if(Flasher::getMemberLog()['id']){
+            $data['countcart'] = $this->model('Cart')->countMyCart(Flasher::getMemberLog()['id']);
+            // var_dump($data['countcart']);
+            // die();
+        }
         $this->view('template/header', $data);
         $this->view('checkout',$data);
         $this->view('template/footer');

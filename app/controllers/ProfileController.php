@@ -8,6 +8,11 @@ class ProfileController extends Controller {
         $data['title'] = 'Profile';
         $data['countcart'] = $this->model('Cart')->countMyCart();
         $data['myProfile'] = $this->model('Profile')->getMyProfile();
+        if(Flasher::getMemberLog()['id']){
+            $data['countcart'] = $this->model('Cart')->countMyCart(Flasher::getMemberLog()['id']);
+            // var_dump($data['countcart']);
+            // die();
+        }
         $this->view('template/header', $data);
         $this->view('profile',$data);
         $this->view('template/footer');

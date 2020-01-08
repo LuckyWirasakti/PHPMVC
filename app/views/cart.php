@@ -29,21 +29,22 @@
                         </thead>
                         <tbody>
                         <form action="cart/updatecart" method="post" enctype="multipart/form-data">
+                        <?php if(!empty($data['usercart'])){ ?>
                         <?php foreach($data['usercart'] as $key=>$value) : ?>
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="img/product/<?=$value['img']?>" width="50%" alt="">
+                                            <img src="<?=BASE_URL?>/frontend/img/product/<?=$value['image']?>" alt="">
                                             <input type="hidden" name="id_cart[]" value="<?=$value['id']?>"?>
                                         </div>
                                         <div class="media-body">
-                                            <p><?=$value['product_name']?></p>
+                                            <p><?=$value['name']?></p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$<?=$value['product_price']?></h5>
+                                    <h5>$<?=$value['price']?></h5>
                                 </td>
                                 <td>
                                     <div class="product_count">
@@ -56,10 +57,11 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><?php $total = $value['product_price']*$value['qty']; echo '$ '.$total; ?></h5>
+                                    <h5><?php $total = $value['price']*$value['qty']; echo '$ '.$total; ?></h5>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                        <?php }else{} ?>
                             <tr class="bottom_button">
                                 <td>
                                 <button type="submit" class="gray_btn">Update Cart</button>
@@ -81,9 +83,11 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                            <?php foreach($data['totalcart'] as $total ) :?>
+                            <?php 
+                            if(!empty($data['totalcart'])){
+                            foreach($data['totalcart'] as $total ) :?>
                                     <h5>$<?=$total['total']?></h5>
-                        <?php endforeach; ?>
+                        <?php endforeach; }else{} ?>
                                 </td>
                             </tr>
                             <tr class="shipping_area">

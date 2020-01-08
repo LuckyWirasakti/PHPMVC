@@ -8,6 +8,11 @@ class PaymentController extends Controller {
         $data['title'] = 'Payment';
         $data['countcart'] = $this->model('Cart')->countMyCart();
         $data['myPayment'] = $this->model('Payment')->getMyPayment();
+        if(Flasher::getMemberLog()['id']){
+            $data['countcart'] = $this->model('Cart')->countMyCart(Flasher::getMemberLog()['id']);
+            // var_dump($data['countcart']);
+            // die();
+        }
         $this->view('template/header', $data);
         $this->view('payment',$data);
         $this->view('template/footer');

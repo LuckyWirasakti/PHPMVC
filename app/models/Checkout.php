@@ -21,7 +21,7 @@ class Checkout extends Model
             Model::query($query);
             Model::bind('user_cart', $data['user_cart']);
             Model::bind('id_users', $data['id_users']);
-            Model::execute();
+            // Model::execute();
 
             return Model::rowCount();
         }else{
@@ -67,7 +67,7 @@ class Checkout extends Model
         $query2="INSERT INTO payment VALUES('','','',:detail_order)";
         Model::query($query2);
         Model::bind('detail_order', $data['id']);
-        Model::execute();
+        // Model::execute();
         return Model::rowCount();
     }
 }
