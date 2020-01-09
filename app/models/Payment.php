@@ -51,8 +51,6 @@ class Payment extends Model
         Model::bind('payment_method', $data['payment_method']);
         Model::bind('id', $data['id']);
         Model::execute();
-<<<<<<< master
-=======
         $query = "INSERT INTO payment_confirm VALUES('',:status,'','', :payment_id,:user_id)";
         Model::query($query);
         Model::bind('status', '0');
@@ -82,7 +80,6 @@ class Payment extends Model
         Model::bind("user_id", Flasher::getLog()['id']);
         Model::bind("status", $data['status']);
         Model::bind("id", $data['id']);
->>>>>>> local
         return Model::rowCount();
     }
     

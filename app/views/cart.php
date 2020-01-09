@@ -121,16 +121,11 @@
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="home">Continue Shopping</a>
-<<<<<<< master
-                                        <button class="primary-btn" type="submit">Proceed to checkout</butto>
-                                    </div> 
-=======
                                        <?php  if(Flasher::getMemberLog()['id']){ ?>
                                         <button class="primary-btn" type="submit">Proceed to checkout</button>
                                        <?php } ?>
                                     </div>
                                     </div>
->>>>>>> local
                                 </td>
 					</form>
                             </tr>

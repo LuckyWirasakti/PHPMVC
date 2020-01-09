@@ -73,23 +73,13 @@ class Cart extends Model
                     $query = "DELETE FROM cart WHERE id = :id";
                     Model::query($query);
                     Model::bind('id', $id_cart[$key]);
-<<<<<<< master
-                    Model::execute();
-                    return Model::rowCount();  
-=======
                     Model::rowCount();  
->>>>>>> local
                 }else{
                     $query = "UPDATE cart SET qty = :qty WHERE id = :id";
                     Model::query($query);
                     Model::bind('qty', $qty[$key]);
                     Model::bind('id', $id_cart[$key]);
-<<<<<<< master
-                    Model::execute();
-                    return Model::rowCount();
-=======
                     Model::rowCount();
->>>>>>> local
                 }   
         }
 return true;

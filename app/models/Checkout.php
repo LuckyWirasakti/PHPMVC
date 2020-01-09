@@ -67,12 +67,8 @@ class Checkout extends Model
         $query2="INSERT INTO payment VALUES('','','',:detail_order,:user_id)";
         Model::query($query2);
         Model::bind('detail_order', $data['id']);
-<<<<<<< master
-        Model::execute();
-=======
         Model::bind('user_id', $data['user_id']);
         // Model::execute();
->>>>>>> local
         return Model::rowCount();
     }
 }
