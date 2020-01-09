@@ -39,7 +39,7 @@
                               
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="hp" name="hp" value="<?=$value['hp']?>">
+                                <input type="text" class="form-control" id="hp" name="phone" value="<?=$value['phone']?>">
                                 
                             </div>
                             <div class="col-md-12 form-group p_star">
@@ -47,7 +47,7 @@
                               
                             </div>
                             <div class="col-md-12 form-group p_star">
-                            <textarea class="form-control" name="addressku" id="address" rows="1" ><?=$value['addressku']?></textarea>
+                            <textarea class="form-control" name="alamat" id="address" rows="1" ><?=$value['alamat']?></textarea>
                             </div>
                             
                     </div>

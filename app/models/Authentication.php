@@ -6,7 +6,7 @@ class Authentication extends Model
 {
     public function attempt($data)
     {
-        Model::query("SELECT username, email, password FROM `user` WHERE email = '{$data['email']}'");
+        Model::query("SELECT id, username, email, password FROM `user` WHERE email = '{$data['email']}'");
 
         if(Model::rowCount() > 0) {
 

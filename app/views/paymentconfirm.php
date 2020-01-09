@@ -91,29 +91,44 @@
                     </aside>
                 </div>
             </div>
-            <div class="col-lg-8">
-                <h3 class="mb-3">Transaction History</h3>
-                <div class="progress-table-wrap">
-                    <div class="progress-table" style="min-width: auto">
-                        <div class="table-head">
-                            <div class="serial">#</div>
-                            <div class="country">Name</div>
-                            <div class="visit">Brand</div>
-                            <div class="percentage">Link</div>
-                        </div>
-                        <?php foreach ($data['transaction'] as $value):?>
-                        <div class="table-row">
-                            <div class="serial"><?=$value['id']?></div>
-                            <div class="country"><?=$value['name']?></div>
-                            <div class="visit"><?=$value['store']?></div>
-                            <div class="percentage">
-                                <a href="<?=$value['hyperlink']?>" class="genric-btn primary circle arrow">Store<span class="lnr lnr-arrow-right"></span></a>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+                <h3 class="mb-3 text-center">Confirm Payment </h3>
+                <?php foreach ($data['myConfirmPayment'] as $key => $myConfirmPayment):?>
+                <div class="col-md-12 form-group p_star">
+                
+                <form class="row contact_form" action="<?=BASE_URL;?>/payment/confirmpayment" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?=$myConfirmPayment['pc_id']?>">
+                            <div class="col-md-12 form-group p_star">
+                            <h5>Kode Payment</h5>
+                                <input type="text" class="form-control" value="<?=$myConfirmPayment['kode_payment']?>" readonly>
+                              
                             </div>
-                        </div>
-                        <?php endforeach;?>
+                            <div class="col-md-12 form-group p_star">
+                            <h5>Payment Method</h5>
+                                <input type="text" class="form-control" value="<?=$myConfirmPayment['payment_method']?>" readonly>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                            <h5>Total Price</h5>
+                                <input type="text" class="form-control" value="$<?=$myConfirmPayment['total_price']?>" readonly>
+                                
+                            </div>
+                            <?php if($myConfirmPayment['image']==""){?>
+                                <div class="col-md-12 form-group p_star">
+                            <h5>Upload Transfer</h5>
+                            <input type="file" class="form-control" name="paymentimage" required><br/>    
+                            </div>
+                            <div class="row col-md-12 offset-md-9">
+                    <button style="float:right" name="submit" class="btn-md primary-btn pull-right" type="submit">Confirm Payment</button>
                     </div>
-                </div>
+                            <?php }else{ ?>
+                            <img class="img-fluid" src="<?=BASE_URL;?>/uploads/payement/<?=$myConfirmPayment['image']?>" width="250px" alt=""><br/><br/>
+                            <?php } ?>
+                            
             </div>
+            
+            </form>
+                <?php endforeach;?>
         </div>
     </div>
 </section>

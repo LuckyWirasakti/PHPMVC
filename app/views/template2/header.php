@@ -63,12 +63,26 @@
                 <span>Product</span>
             </a>
         </li>
+        <li class="nav-item <?=Flasher::getLink()=='adminpaymentconfirmation'?'active':''?>">
+            <a class="nav-link" href="<?=BASE_URL?>/adminpaymentconfirmation">
+                <i class="fas fa-file-signature"></i>
+                <span>Payment</span>
+            </a>
+        </li>
+        <li class="nav-item <?=Flasher::getLink()=='category'?'active':''?>">
+            <a class="nav-link" href="<?=BASE_URL?>/admincategory">
+                <i class="fas fa-file-signature"></i>
+                <span>Category</span>
+            </a>
+        </li>
+        
         <li class="nav-item <?=Flasher::getLink()=='comment'?'active':''?>">
             <a class="nav-link" href="<?=BASE_URL?>/admincomment">
                 <i class="fas fa-file-signature"></i>
                 <span>Comment</span>
             </a>
         </li>
+
         <li class="nav-item <?=Flasher::getLink()=='contact'?'active':''?>">
             <a class="nav-link" href="<?=BASE_URL?>/admincontact">
                 <i class="fas fa-file-signature"></i>
@@ -83,7 +97,7 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Frontend Management :</h6>
                 <a class="dropdown-item <?=Flasher::getLink()=='home'?'active':''?>" href="<?=BASE_URL?>/adminhome">Home</a>
-                <a class="dropdown-item <?=Flasher::getLink()=='home'?'active':''?>" href="<?=BASE_URL?>/admincompany">Company Profile</a>
+                <a class="dropdown-item <?=Flasher::getLink()=='company'?'active':''?>" href="<?=BASE_URL?>/admincompany">Company Profile</a>
                 <a class="dropdown-item" href="#">Profile</a>
                 <h6 class="dropdown-header">Backend Management :</h6>
                 <a class="dropdown-item <?=Flasher::getLink()=='user'?'active':''?>" href="adminuser">User</a>

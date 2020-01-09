@@ -19,18 +19,10 @@
         <div class="container">
         <div class="col-lg-6 offset-3">
         <?php foreach($data['myPayment'] as $key=>$value) : ?>
-                        <form action="payment/generate" method="post">
+                        <form action="<?=BASE_URL?>/payment/generate" method="post">
                         <input type="hidden" name="id" value="<?=$value['id']?>">
+                        <input type="hidden" name="user_id" value="<?=Flasher::getMemberLog()['id']?>">
                         <div class="order_box">
-                            <!-- <div class="payment_item">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option5" name="selector">
-                                    <label for="f-option5">Check payments</label>
-                                    <div class="check"></div>
-                                </div>
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
-                                    Store Postcode.</p>
-                            </div> -->
                             <div class="payment_item">
                                 <div class="radion_btn">
                                     <input type="radio" id="f-option5"  name="payment_method" value="Paypal">

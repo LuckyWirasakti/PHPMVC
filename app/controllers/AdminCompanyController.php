@@ -8,7 +8,7 @@ class AdminCompanyController extends Controller {
         if(is_null(Flasher::getLog())){
             $this->redirect('adminauthentication');
         }
-        Flasher::setLink('contact');
+        Flasher::setLink('company');
     }
 
     public function index()

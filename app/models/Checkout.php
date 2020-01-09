@@ -4,9 +4,9 @@ use app\core\Model;
 
 class Checkout extends Model
 {
-    public function getmyCheckout()
+    public function getmyCheckout($id)
     {
-        Model::query('SELECT * FROM detail_order WHERE id_users=1 and user_cart=1');
+        Model::query('SELECT * FROM detail_order WHERE id_users='.$id.' and user_cart='.$id.'');
         return Model::resultSet();
     }
     public function addCheckout($data)
@@ -64,10 +64,15 @@ class Checkout extends Model
         Model::query($query3);
         Model::bind('id', $data['id']);
         Model::execute();
-        $query2="INSERT INTO payment VALUES('','','',:detail_order)";
+        $query2="INSERT INTO payment VALUES('','','',:detail_order,:user_id)";
         Model::query($query2);
         Model::bind('detail_order', $data['id']);
+<<<<<<< master
         Model::execute();
+=======
+        Model::bind('user_id', $data['user_id']);
+        // Model::execute();
+>>>>>>> local
         return Model::rowCount();
     }
 }

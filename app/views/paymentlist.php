@@ -92,22 +92,24 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <h3 class="mb-3">Transaction History</h3>
+                <h3 class="mb-3">My Payment List </h3>
                 <div class="progress-table-wrap">
                     <div class="progress-table" style="min-width: auto">
                         <div class="table-head">
                             <div class="serial">#</div>
-                            <div class="country">Name</div>
-                            <div class="visit">Brand</div>
-                            <div class="percentage">Link</div>
+                            <div class="country">Kode Payment</div>
+                            <div class="visit">Method</div>
+                            <div class="visit">Status</div>
+                            <div class="percentage">Confirm Payment</div>
                         </div>
-                        <?php foreach ($data['transaction'] as $value):?>
+                        <?php foreach ($data['myPayment'] as $key => $value):?>
                         <div class="table-row">
-                            <div class="serial"><?=$value['id']?></div>
-                            <div class="country"><?=$value['name']?></div>
-                            <div class="visit"><?=$value['store']?></div>
+                            <div class="serial"><?=$key+1?></div>
+                            <div class="country"><?=$value['kode_payment']?></div>
+                            <div class="visit"><?=$value['payment_method']?></div>
+                            <div class="visit"><?=$value['status']==0?'Unconfirmed':'Confirmed'?></div>
                             <div class="percentage">
-                                <a href="<?=$value['hyperlink']?>" class="genric-btn primary circle arrow">Store<span class="lnr lnr-arrow-right"></span></a>
+                                <a href="<?=BASE_URL?>/payment/confirm/<?=$value['pc_id']?>" class="genric-btn primary circle arrow">Pay Now<span class="lnr lnr-arrow-right"></span></a>
                             </div>
                         </div>
                         <?php endforeach;?>

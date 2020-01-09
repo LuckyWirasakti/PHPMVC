@@ -56,6 +56,7 @@
                         <?php foreach($data['myCheckout'] as $key=>$value2) : ?>
                         <form class="row contact_form" action="checkout/updatecheckout" method="post" novalidate="novalidate">
                         <input type="hidden" name="id" value="<?=$value2['id']?>">
+                        <input type="hidden" name="user_id" value="<?=Flasher::getMemberLog()['id']?>">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="first" name="fullname" placeholder="Fullname" value="<?=$value2['fullname']?>">
                                 

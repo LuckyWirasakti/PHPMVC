@@ -68,50 +68,31 @@ class Cart extends Model
         $id_cart = $data['id_cart'];
         $qty = $data['qty'];
 
-        // $name = $_POST['name'];
-        // $email = $_POST['account'];
-
-        // foreach( $name as $key => $n ) {
-        // print "The name is ".$n." and email is ".$email[$key].", thank you\n";
-        // }
-
         foreach($id_cart as $key=>$n){
-            // foreach($qty[$key] as $key2=>$n2){
                 if($qty[$key]<=0){
                     $query = "DELETE FROM cart WHERE id = :id";
                     Model::query($query);
                     Model::bind('id', $id_cart[$key]);
+<<<<<<< master
                     Model::execute();
                     return Model::rowCount();  
+=======
+                    Model::rowCount();  
+>>>>>>> local
                 }else{
                     $query = "UPDATE cart SET qty = :qty WHERE id = :id";
                     Model::query($query);
                     Model::bind('qty', $qty[$key]);
                     Model::bind('id', $id_cart[$key]);
+<<<<<<< master
                     Model::execute();
                     return Model::rowCount();
+=======
+                    Model::rowCount();
+>>>>>>> local
                 }   
-            // }
         }
-
-        //backup
-        // foreach($id_cart as $key=>$n){
-        //     // foreach($qty[$key] as $key2=>$n2){
-        //         if($qty[$key2]==0){
-        //             $query = "DELETE FROM cart WHERE id = :id";
-        //             Model::query($query);
-        //             Model::bind('id', $n[$key]);
-        //             Model::execute();
-        //             return Model::rowCount();  
-        //         }else{
-        //             $query = "UPDATE cart SET qty = :qty WHERE id = :id";
-        //             Model::query($query);
-        //             Model::bind('qty', $qty[$key]);
-        //             Model::bind('id', $n[$key]);
-        //             Model::execute();
-        //             return Model::rowCount();
-        //         }   
-        //     // }
-        // }
+return true;
+       
     }
 }

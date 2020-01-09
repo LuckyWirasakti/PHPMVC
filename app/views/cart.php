@@ -98,21 +98,9 @@
                                 </td>
                                 <td>
                                     <div class="shipping_box">
-                                        <!-- <select class="shipping_select">
-                                            <option value="Indonesia">Indonesia</option>
-                                        </select>
-                                        <select class="shipping_select">
-                                            <option value="1">Select a State</option>
-                                            <option value="2">Select a State</option>
-                                            <option value="4">Select a State</option>
-                                        </select>
-                                        <input type="text" placeholder="Postcode/Zipcode">
-                                        <a class="gray_btn" href="#">Update Details</a> -->
                                         <ul class="list">
-                                            <!-- <li><a href="#">Flat Rate: $5.00</a></li> -->
+                                            
                                             <li class="active"><a href="#">Free Shipping</a></li>
-                                            <!-- <li><a href="#">Flat Rate: $10.00</a></!-->
-                                            <!-- <li class="active"><a href="#">Local Delivery: $2.00</a></!-->
                                         </ul>
                                     </div>
                                 </td>
@@ -128,13 +116,21 @@
 
                                 </td> -->
                                 <form action="checkout/addcheckout" method="post">
-								<input type="hidden" name="user_cart" value="1">
-								<input type="hidden" name="id_users" value="1">
+								<input type="hidden" name="user_cart" value="<?=Flasher::getMemberLog()['id']?>">
+								<input type="hidden" name="id_users" value="<?=Flasher::getMemberLog()['id']?>">
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="home">Continue Shopping</a>
+<<<<<<< master
                                         <button class="primary-btn" type="submit">Proceed to checkout</butto>
                                     </div> 
+=======
+                                       <?php  if(Flasher::getMemberLog()['id']){ ?>
+                                        <button class="primary-btn" type="submit">Proceed to checkout</button>
+                                       <?php } ?>
+                                    </div>
+                                    </div>
+>>>>>>> local
                                 </td>
 					</form>
                             </tr>
