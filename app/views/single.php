@@ -105,6 +105,17 @@
                                         <h5><?=date('dS M, Y H:i A', strtotime($value['created_at']))?></h5>
                                         <p class="mb-4"><?=$value['comment']?></p>
                                     </div>
+                                    <?php if($value['reply_by']==''): ?>
+                                        <div class="media-body">
+                                        <p>Not Replied</p>
+                                        </div>
+                                    <?php else:?>
+                                    <div class="media-body">
+                                        <h4>Reply: <?=$value['reply_by']?></h4>    
+                                        <h5><?=date('dS M, Y H:i A', strtotime($value['update_at']))?></h5>
+                                        <p class="mb-4"><?=$value['reply_comment']?></p>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

@@ -28,9 +28,9 @@
 	<!-- End Sample Area --> 
 	                     <?php $no=1;
                         foreach($data['company'] as $value) : ?>        
-						<img src="<?=BASE_URL?>/uploads/company/<?=$value['image']?>" width="80%">
+						<img width="200" src="<?=BASE_URL?>/uploads/company/<?=$value['image']?>" width="80%">
 					</div>
-					<div class="col-md-12 mt-sm-20">
+					<div class="col-md-6 mt-sm-20">
 	<br/>
 	                  <p><?=$value['description']?></p>
 					</div>

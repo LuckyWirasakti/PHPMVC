@@ -63,7 +63,7 @@
                         <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="<?=BASE_URL?>/cart" class="cart"><span class="ti-bag">
                         <?php 
-                        if(Flasher::getMemberLog()['id']){
+                        if(!empty(Flasher::getMemberLog()['id'])){
                             if(!empty($data['countcart'])){
                                 foreach($data['countcart'] as $item){
                                     echo '('.$item['count'].')';

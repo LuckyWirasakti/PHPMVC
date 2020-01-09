@@ -1,7 +1,7 @@
 <div class="card mb-3">
     <div class="card-header d-flex">
         <i class="fas fa-table mt-2"> <?=$data['title']?></i>
-        <a href="<?=BASE_URL?>/adminuser/create" class="btn btn-primary btn-sm ml-auto">Tambah</a>
+        <a href="<?=BASE_URL?>/adminuser/create" class="btn btn-primary btn-sm ml-auto">Add</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -29,8 +29,8 @@
                         <td><?=$value['username']?></td>
                         <td><?=$value['email']?></td>
                         <td>
-                            <a href="<?=BASE_URL?>/adminuser/edit/<?=$value['id']?>" class="btn btn-primary btn-sm">Ubah</a>
-                            <a href="<?=BASE_URL?>/adminuser/destroy/<?=$value['id']?>" class="btn btn-danger btn-sm">Ubah</a>
+                            <a href="<?=BASE_URL?>/adminuser/edit/<?=$value['id']?>" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="<?=BASE_URL?>/adminuser/destroy/<?=$value['id']?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -49,14 +49,14 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="frontend/img/i1.jpg" alt=""></li>
-                        <li><img src="frontend/img/i2.jpg" alt=""></li>
-                        <li><img src="frontend/img/i3.jpg" alt=""></li>
-                        <li><img src="frontend/img/i4.jpg" alt=""></li>
-                        <li><img src="frontend/img/i5.jpg" alt=""></li>
-                        <li><img src="frontend/img/i6.jpg" alt=""></li>
-                        <li><img src="frontend/img/i7.jpg" alt=""></li>
-                        <li><img src="frontend/img/i8.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i1.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i2.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i3.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i4.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i5.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i6.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i7.jpg" alt=""></li>
+                        <li><img src="<?=BASE_URL?>/frontend/img/i8.jpg" alt=""></li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <p class="footer-text m-0">&copy;<script>
                     document.write(new Date().getFullYear());
 
-                </script> All rights reserved | <a href="wirasakti.web.id">Lucky Wirasakti</a></p>
+                </script> All rights reserved | <a href="wirasakti.web.id">Santuy Developer</a></p>
         </div>
     </div>
 </footer>
