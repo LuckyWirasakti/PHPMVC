@@ -9,7 +9,11 @@ class Member extends Model
         Model::query("SELECT * FROM member");
         return Model::resultSet();
     }
-
+    public function myTransaction($id)
+    {
+        Model::query("SELECT * FROM detail_order join cart on detail_order.id_users=cart.id_users join product on product.id=cart.id_product where detail_order.id_users={$id}");
+        return Model::resultSet();
+    }
     public function member_single($id)
     {
         Model::query("SELECT * FROM member WHERE id=:id");

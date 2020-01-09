@@ -98,17 +98,20 @@
                         <div class="table-head">
                             <div class="serial">#</div>
                             <div class="country">Name</div>
-                            <div class="visit">Brand</div>
-                            <div class="percentage">Link</div>
+                            <div class="visit">Qty</div>
+                            <div class="percentage">Total</div>
+                            <div class="percentage">Status Payment</div>
                         </div>
-                        <?php foreach ($data['transaction'] as $value):?>
+                        <?php foreach ($data['transaction'] as $key=>$value):?>
                         <div class="table-row">
-                            <div class="serial"><?=$value['id']?></div>
+                            <div class="serial"><?=$key+1?></div>
                             <div class="country"><?=$value['name']?></div>
-                            <div class="visit"><?=$value['store']?></div>
-                            <div class="percentage">
-                                <a href="<?=$value['hyperlink']?>" class="genric-btn primary circle arrow">Store<span class="lnr lnr-arrow-right"></span></a>
-                            </div>
+                            <div class="visit"><?=$value['qty']?></div>
+                            <div class="visit">$<?=$value['total_price']?></div>
+                            <div class="visit">$<?=$value['total_price']?></div>
+                            <!-- <div class="percentage">
+                                <a href="" class="genric-btn primary circle arrow">Store<span class="lnr lnr-arrow-right"></span></a>
+                            </div> -->
                         </div>
                         <?php endforeach;?>
                     </div>

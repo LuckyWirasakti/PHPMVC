@@ -34,9 +34,9 @@
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
-            <form class="row contact_form" action="<?=BASE_URL?>/cart/addcart/<?=$valueproduct['id']?>" method="post" id="contactForm"
+            <form class="row contact_form" action="<?=BASE_URL?>/cart/addcart" method="post" id="contactForm"
                                 novalidate="novalidate">
-            <input type="hidden" name="id_product" value="<?=$valueproduct['id']?>">
+            <input type="hidden" name="id" value="<?=$valueproduct['id']?>">
             <input type="hidden" name="user_cart" value="<?=Flasher::getMemberLog()['id']?>">
             <input type="hidden" name="id_users" value="<?=Flasher::getMemberLog()['id']?>">
             <input type="hidden" name="status_cart" value="1">

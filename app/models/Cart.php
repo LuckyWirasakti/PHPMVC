@@ -21,7 +21,7 @@ class Cart extends Model
             Model::bind('user_cart', $data['user_cart']);
             Model::bind('id_users', $data['id_users']);
             Model::bind('status_cart', $data['status_cart']);
-            Model::execute();
+            // Model::execute();
             return Model::rowCount();
         }else{
         foreach($hasil as $key=>$value){
@@ -32,7 +32,7 @@ class Cart extends Model
                 Model::bind('qty', $qty);
                 Model::bind('id', $value['id']);
                 Model::execute();
-                return Model::rowCount();
+                // return Model::rowCount();
             }else{
                 $query = "INSERT INTO cart VALUES('', :id_product, :qty, :user_cart, :id_users,:status_cart)";
 
@@ -43,24 +43,25 @@ class Cart extends Model
                 Model::bind('id_users', $data['id_users']);
                 Model::bind('status_cart', $data['status_cart']);
                 Model::execute();
-                return Model::rowCount();
+                // return Model::rowCount();
             }
         }
+        return true;
     }
 }
 
-    public function getMyCart()
+    public function getMyCart($id)
     {
-        Model::query('SELECT cart.id,product.name,cart.qty,product.price,product.image FROM cart JOIN product ON cart.id_product=product.id WHERE cart.id_users=1 and cart.status_cart=1');
+        Model::query('SELECT cart.id,product.name,cart.qty,product.price,product.image FROM cart JOIN product ON cart.id_product=product.id WHERE cart.id_users='.$id.' and cart.status_cart=1');
         return Model::resultSet();
     }
-    public function countMyCart()
+    public function countMyCart($id)
     {
-        Model::query('SELECT count(*) as count FROM cart WHERE cart.id_users=1 and cart.status_cart=1');
+        Model::query('SELECT count(*) as count FROM cart WHERE cart.id_users='.$id.' and cart.status_cart=1');
         return Model::resultSet();
     }
-    public function totalMyCart(){
-        Model::query('SELECT SUM(cart.qty*product.price) as total FROM cart JOIN product ON cart.id_product=product.id WHERE cart.id_users=1 and cart.status_cart=1');
+    public function totalMyCart($id){
+        Model::query('SELECT SUM(cart.qty*product.price) as total FROM cart JOIN product ON cart.id_product=product.id WHERE cart.id_users='.$id.' and cart.status_cart=1');
         return  Model::resultSet();
     }
     public function updateCart($data)

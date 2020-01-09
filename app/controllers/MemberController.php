@@ -9,8 +9,9 @@ class MemberController extends Controller {
             $this->redirect('member/login');
         }
         $data['title'] = "Dashboard Member";
-        $data['transaction'] = $this->model('Member')->transaction();
-
+        if(Flasher::getMemberLog()['id']){
+        $data['transaction'] = $this->model('Member')->myTransaction(Flasher::getMemberLog()['id']);
+        }
         $this->view('template/header', $data);
         $this->view('member', $data);
         $this->view('template/footer');

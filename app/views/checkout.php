@@ -118,7 +118,7 @@
                             <ul class="list">
                                 <li><a href="#">Product <span>Total</span></a></li>
                                 <?php foreach($data['myCart'] as $key=>$value) : ?>
-                                <li><a href="#"><?=$value['product_name']?> <span class="middle">x <?=$value['qty']?></span> <span class="last"><?php $total = $value['product_price']*$value['qty']; echo '$ '.$total; ?></span></a></li>
+                                <li><a href="#"><?=$value['name']?> <span class="middle">x <?=$value['qty']?></span> <span class="last"><?php $total = $value['price']*$value['qty']; echo '$ '.$total; ?></span></a></li>
                                 <?php endforeach; ?>
                             </ul>
                             <ul class="list list_2">
