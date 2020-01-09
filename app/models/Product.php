@@ -27,7 +27,7 @@ class Product extends Model
         Model::bind('description', $data['description']);
         Model::bind('status_product', $data['status_product']);
         Model::bind('category_id', $data['category_id']);
-        Model::bind('user_id', $data['user_id']);
+        Model::bind('user_id', Flasher::getLog()['id']);
 
         return Model::rowCount();
     }
@@ -40,7 +40,7 @@ class Product extends Model
         Model::bind('description', $data['description']);
         Model::bind('status_product', $data['status_product']);
         Model::bind('category_id', $data['category_id']);
-        Model::bind('user_id', $data['user_id']);
+        Model::bind('user_id', Flasher::getLog()['id']);
         Model::bind('image', $data2['image']);
 
         return Model::rowCount();
@@ -48,14 +48,13 @@ class Product extends Model
 
     public function update_admin2($data,$data2)
     {
-        Model::query("UPDATE product SET name=:name, price=:price, description=:description, status_product=:status_product,category_id=:category_id,user_id=:user_id,image=:image WHERE id = :id");
+        Model::query("UPDATE product SET name=:name, price=:price, description=:description, status_product=:status_product,category_id=:category_id, image=:image WHERE id = :id");
 
         Model::bind('name', $data['name']);
         Model::bind('price', $data['price']);
         Model::bind('description', $data['description']);
         Model::bind('status_product', $data['status_product']);
         Model::bind('category_id', $data['category_id']);
-        Model::bind('user_id', $data['user_id']);
         Model::bind('image', $data2['image']);
         Model::bind('id', $data['id']);
 
@@ -63,14 +62,13 @@ class Product extends Model
     }
     public function update_admin($data)
     {
-        Model::query("UPDATE product SET name=:name, price=:price, description=:description, status_product=:status_product,category_id=:category_id,user_id=:user_id WHERE id = :id");
+        Model::query("UPDATE product SET name=:name, price=:price, description=:description, status_product=:status_product,category_id=:category_id WHERE id = :id");
 
         Model::bind('name', $data['name']);
         Model::bind('price', $data['price']);
         Model::bind('description', $data['description']);
         Model::bind('status_product', $data['status_product']);
         Model::bind('category_id', $data['category_id']);
-        Model::bind('user_id', $data['user_id']);
         Model::bind('id', $data['id']);
 
         return Model::rowCount();
