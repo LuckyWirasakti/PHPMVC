@@ -35,7 +35,7 @@ class Member extends Model
 
     public function store($data)
     {
-        Model::query("INSERT INTO member VALUES (NULL, :username, :email, :gender, :food, :mom, :password, current_timestamp())");
+        Model::query("INSERT INTO member VALUES ('',:username,'', :email, :gender, :food, :mom, :password,'','','', current_timestamp())");
 
         Model::bind('username', $data['username']);
         Model::bind('email', $data['email']);
