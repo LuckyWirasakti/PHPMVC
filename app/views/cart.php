@@ -137,7 +137,9 @@
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="home">Continue Shopping</a>
-                                        <button class="primary-btn" type="submit">Proceed to checkout</butto>
+                                       <?php  if(Flasher::getMemberLog()['id']){ ?>
+                                        <button class="primary-btn" type="submit">Proceed to checkout</button>
+                                       <?php } ?>
                                     </div>
                                 </td>
 					</form>
