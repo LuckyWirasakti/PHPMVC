@@ -134,7 +134,7 @@
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="home">Continue Shopping</a>
                                         <button class="primary-btn" type="submit">Proceed to checkout</butto>
-                                    </div>
+                                    </div> 
                                 </td>
 					</form>
                             </tr>
