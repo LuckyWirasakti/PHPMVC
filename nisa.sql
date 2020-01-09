@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2019 at 05:49 AM
+-- Generation Time: Jan 09, 2020 at 07:53 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.1.33
 
@@ -85,6 +85,15 @@ CREATE TABLE `cart` (
   `status_cart` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_product`, `qty`, `user_cart`, `id_users`, `status_cart`) VALUES
+(1, 1, 2, '11', 1, 1),
+(2, 2, 2, '22', 2, 1),
+(3, 3, 1, '32', 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -98,15 +107,17 @@ CREATE TABLE `comment` (
   `id_product` int(11) NOT NULL,
   `comment` text NOT NULL,
   `reply_comment` text NOT NULL,
-  `reply_by` varchar(100) NOT NULL
+  `reply_by` varchar(100) NOT NULL,
+  `tgl_comment` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`id`, `name`, `email`, `id_product`, `comment`, `reply_comment`, `reply_by`) VALUES
-(1, 'Albert', 'albert@gmail.com', 1, 'Product is ready ?', 'Yeah, this product is still ready ', 'Admin RonRon');
+INSERT INTO `comment` (`id`, `name`, `email`, `id_product`, `comment`, `reply_comment`, `reply_by`, `tgl_comment`) VALUES
+(1, 'Test', 'test@gmail.com', 1, 'test', '', '', NULL),
+(2, 'Boy', 'boy@gmail.com', 14, 'cek', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,6 +153,13 @@ CREATE TABLE `contact` (
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'Albert Aldo', 'albert@gmail.com', 'Business Relationship', 'Hi,i want to have a relationship with your business, ....');
+
 -- --------------------------------------------------------
 
 --
@@ -163,6 +181,33 @@ CREATE TABLE `detail_order` (
   `postcode` int(11) DEFAULT NULL,
   `total_price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `detail_order`
+--
+
+INSERT INTO `detail_order` (`id`, `user_cart`, `id_users`, `fullname`, `numberphone`, `email`, `country`, `myaddress`, `province`, `city`, `district`, `postcode`, `total_price`) VALUES
+(1, 1, 1, '', '   ', '', '', '', '', '', '', 0, 550);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL,
+  `question` varchar(1000) NOT NULL,
+  `answer` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `question`, `answer`) VALUES
+(8, 'What are the payment methods available?', 'fdgsdgs9999dsvl;aopsjgsak'),
+(17, 'affsfa', 'asfasfas');
 
 -- --------------------------------------------------------
 
@@ -226,6 +271,13 @@ CREATE TABLE `payment` (
   `detail_order` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `kode_payment`, `payment_method`, `detail_order`) VALUES
+(1, 'DBCIKCV9FO', 'Bank BCA', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -248,44 +300,68 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `description`, `status_product`, `category_id`, `image`, `user_id`) VALUES
-(1, 'Nike New Hammer', 275, NULL, NULL, NULL, 'p1.jpg', 1),
-(2, 'New Balance New Hammer', 83, NULL, NULL, NULL, 'p6.jpg', 1),
-(3, 'Converse New Hammer', 591, NULL, NULL, NULL, 'p1.jpg', 1),
-(4, 'New Reebook New Hammer', 705, NULL, NULL, NULL, 'p7.jpg', 1),
-(5, 'New Superga New Hammer', 751, NULL, NULL, NULL, 'p7.jpg', 1),
-(6, 'New Reebook New Hammer', 640, NULL, NULL, NULL, 'p8.jpg', 1),
-(7, 'New Reebook New Hammer', 944, NULL, NULL, NULL, 'p6.jpg', 1),
-(8, 'New Reebook New Hammer', 802, NULL, NULL, NULL, 'p8.jpg', 1),
-(9, 'New Puma New Hammer', 177, NULL, NULL, NULL, 'p7.jpg', 1),
-(10, 'New Puma New Hammer', 480, NULL, NULL, NULL, 'p7.jpg', 1),
-(11, 'New Reebook New Hammer', 867, NULL, NULL, NULL, 'p3.jpg', 1),
-(12, 'New Puma New Hammer', 896, NULL, NULL, NULL, 'p7.jpg', 1),
-(13, 'New Puma New Hammer', 879, NULL, NULL, NULL, 'p8.jpg', 1),
-(14, 'New Puma New Hammer', 706, NULL, NULL, NULL, 'p7.jpg', 1),
-(15, 'New Balance New Hammer', 891, NULL, NULL, NULL, 'p7.jpg', 1),
-(16, 'New Puma New Hammer', 336, NULL, NULL, NULL, 'p7.jpg', 1),
-(17, 'Nike New Hammer', 6, NULL, NULL, NULL, 'p5.jpg', 1),
-(18, 'New Puma New Hammer', 23, NULL, NULL, NULL, 'p6.jpg', 1),
-(19, 'Nike New Hammer', 97, NULL, NULL, NULL, 'p4.jpg', 1),
-(20, 'New Superga New Hammer', 413, NULL, NULL, NULL, 'p8.jpg', 1),
-(21, 'Nike New Hammer', 775, NULL, NULL, NULL, 'p8.jpg', 1),
-(22, 'New Puma New Hammer', 633, NULL, NULL, NULL, 'p4.jpg', 1),
-(23, 'Nike New Hammer', 842, NULL, NULL, NULL, 'p3.jpg', 1),
-(24, 'Nike New Hammer', 311, NULL, NULL, NULL, 'p8.jpg', 1),
-(25, 'Converse New Hammer', 26, NULL, NULL, NULL, 'p5.jpg', 1),
-(26, 'New Superga New Hammer', 200, NULL, NULL, NULL, 'p2.jpg', 1),
-(27, 'New Superga New Hammer', 918, NULL, NULL, NULL, 'p8.jpg', 1),
-(28, 'New Superga New Hammer', 991, NULL, NULL, NULL, 'p7.jpg', 1),
-(29, 'New Superga New Hammer', 200, NULL, NULL, NULL, 'p4.jpg', 1),
-(30, 'New Superga New Hammer', 25, NULL, NULL, NULL, 'p5.jpg', 1),
-(31, 'Adiddas New Hammer', 527, NULL, NULL, NULL, 'p6.jpg', 1),
-(32, 'New Puma New Hammer', 559, NULL, NULL, NULL, 'p3.jpg', 1),
-(33, 'New Superga New Hammer', 212, NULL, NULL, NULL, 'p1.jpg', 1),
-(34, 'New Superga New Hammer', 382, NULL, NULL, NULL, 'p6.jpg', 1),
-(35, 'Nike New Hammer', 274, NULL, NULL, NULL, 'p2.jpg', 1),
-(36, 'New Puma New Hammer', 225, NULL, NULL, NULL, 'p7.jpg', 1),
-(37, 'Nike New Hammer', 303, NULL, NULL, NULL, 'p6.jpg', 1),
-(38, 'Nike New Hammer', 840, NULL, NULL, NULL, 'p5.jpg', 1);
+(1, 'Nike New Hammer', 275, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p1.jpg', 1),
+(2, 'New Balance New Hammer', 83, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(3, 'Converse New Hammer', 591, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p1.jpg', 1),
+(4, 'New Reebook New Hammer', 705, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(5, 'New Superga New Hammer', 751, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(6, 'New Reebook New Hammer', 640, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(7, 'New Reebook New Hammer', 944, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(8, 'New Reebook New Hammer', 802, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(9, 'New Puma New Hammer', 177, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(10, 'New Puma New Hammer', 480, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(11, 'New Reebook New Hammer', 867, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p3.jpg', 1),
+(12, 'New Puma New Hammer', 896, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(13, 'New Puma New Hammer', 879, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(14, 'New Puma New Hammer', 706, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(15, 'New Balance New Hammer', 891, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(16, 'New Puma New Hammer', 336, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(17, 'Nike New Hammer', 6, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p5.jpg', 1),
+(18, 'New Puma New Hammer', 23, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(19, 'Nike New Hammer', 97, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p4.jpg', 1),
+(20, 'New Superga New Hammer', 413, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(21, 'Nike New Hammer', 775, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(22, 'New Puma New Hammer', 633, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p4.jpg', 1),
+(23, 'Nike New Hammer', 842, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p3.jpg', 1),
+(24, 'Nike New Hammer', 311, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(25, 'Converse New Hammer', 26, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p5.jpg', 1),
+(26, 'New Superga New Hammer', 200, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p2.jpg', 1),
+(27, 'New Superga New Hammer', 918, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p8.jpg', 1),
+(28, 'New Superga New Hammer', 991, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(29, 'New Superga New Hammer', 200, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p4.jpg', 1),
+(30, 'New Superga New Hammer', 25, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p5.jpg', 1),
+(31, 'Adiddas New Hammer', 527, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(32, 'New Puma New Hammer', 559, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p3.jpg', 1),
+(33, 'New Superga New Hammer', 212, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p1.jpg', 1),
+(34, 'New Superga New Hammer', 382, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(35, 'Nike New Hammer', 274, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p2.jpg', 1),
+(36, 'New Puma New Hammer', 225, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p7.jpg', 1),
+(37, 'Nike New Hammer', 303, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p6.jpg', 1),
+(38, 'Nike New Hammer', 840, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Available', NULL, 'p5.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `id_member` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(25) NOT NULL,
+  `reviews` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `id_product`, `id_member`, `name`, `email`, `phone`, `reviews`) VALUES
+(3, 1, 0, 'Triadi Nugroho', 'triadi.1998@students.amikom.ac.id', 2147483647, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'),
+(6, 1, 0, 'Mohamad Hilman Nurhakim', 'bobby.bop69@gmail.com', 2147483647, 'Disini kembali kau hadirkan ingatan yang seharusnya ku lupakan, dan ku hancurkan adanya.');
 
 -- --------------------------------------------------------
 
@@ -387,6 +463,12 @@ ALTER TABLE `detail_order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `feature`
 --
 ALTER TABLE `feature`
@@ -411,6 +493,12 @@ ALTER TABLE `payment`
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `transaction`
@@ -444,7 +532,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comment`
@@ -462,13 +550,19 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `feature`
@@ -486,13 +580,19 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaction`
